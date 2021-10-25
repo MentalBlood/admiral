@@ -11,15 +11,13 @@ class Parsers:
 	
 	def load(
 		self, 
+		main_module_name,
 		subcommands, 
 		subparsers_title='subparsers', 
-		main_module_name=None, 
 		subcommands_module_name='subcommands'
 	):
 
 		subparsers = self.root.add_subparsers(title=subparsers_title)
-
-		main_module_name = main_module_name or os.path.basename(os.path.dirname(__file__))
 
 		for c in subcommands:
 
